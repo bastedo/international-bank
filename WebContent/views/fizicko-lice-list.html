@@ -1,0 +1,63 @@
+<div class="card meetings cf">
+	<h3>Fizicka lica</h3>
+
+	<button type="button" class="btn btn-default"
+	ng-click="new()">Dodaj</button></br>
+
+
+	<div ng-show="errorMessage" class="alert alert-warning" role="alert">{{errorMessage}}</div>
+	<div ng-show="successMessage" class="alert alert-success" role="alert">{{successMessage}}</div>
+
+	<table class="table table-striped table-bordered table-condensed table-hover">
+		<tr>
+			<td>klijentId</td>
+			<td>telefon</td>
+			<td>email</td>
+			<td>adresa</td>
+		
+
+			<td>punoIme</td>
+			
+			<td>pol</td>
+			<td>registarskiBroj</td>
+			<td>jmbg</td>
+			<td>Opcija</td>
+			<th ng-if="isZoomActive('/fizickoLice-list')">Pick up</th>
+
+		</tr>
+		<tr ng-repeat="fizickoLice in fizickaLica track by $index ">
+			
+			<td>{{fizickoLice.klijentId}}</td>
+			<td>{{fizickoLice.telefon}}</td>
+			<td>{{fizickoLice.email}}</td>
+			<td>{{fizickoLice.adresa}}</td>
+
+
+			<td>{{fizickoLice.punoIme}}</td>
+			
+			<td>{{fizickoLice.pol}}</td>
+			<td>{{fizickoLice.registarskiBroj}}</td>
+			<td>{{fizickoLice.jmbg}}</td>
+			
+			
+			<td><button type="button" class="btn btn-default"
+				ng-click="remove(fizickoLice)">Obrisi</button>
+				<button type="button" class="btn btn-default"
+				ng-click="edit(fizickoLice)">Izmeni</button>
+				<button type="button" class="btn btn-default"
+				ng-click="exportIzvod(fizickoLice)">Exportuj Izvod</button>
+				
+				<button type="button" class="btn btn-default"
+				ng-click="generateReport(fizickoLice)">Generisi izvestaj</button>
+				
+				</td>
+
+<td ng-if="isZoomActive('/fizickoLice-list')">
+				<button ng-click="genericPickUp(fizickoLice,'fizickoLice')" type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-log-out" aria-hidden="true"  ></span>
+				</button>
+			</td>
+			</tr>
+		</table>
+
+	</div>

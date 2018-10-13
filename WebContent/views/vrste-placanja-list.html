@@ -1,0 +1,36 @@
+<div class="card meetings cf">
+	<h3>Vrste placanja</h3>
+
+	<button type="button" class="btn btn-default"
+	ng-click="new()">Dodaj</button>
+
+	<table class="table table-striped table-bordered table-condensed table-hover">
+		<tr>
+			<th>Sifra</th>
+			<th>Naziv</th>
+			<th>Oznaka</th>
+			<th>Opcija</th>
+				<th ng-if="isZoomActive('/vrstePlacanja-list')">Pick up</th>
+
+		</tr>
+		<tr ng-repeat="vrstePlacanja in vrstePlacanjaa track by $index ">
+			<td>{{vrstePlacanja.vrstaPlacanjaId}}</td>
+			<td>{{vrstePlacanja.nazivVrstePlacanja}}</td>
+			<td>{{vrstePlacanja.oznaka}}</td>
+		
+
+			
+			<td><button type="button" class="btn btn-default"
+				ng-click="remove(vrstePlacanja)">Obrisi</button>
+				<button type="button" class="btn btn-default"
+				ng-click="edit(vrstePlacanja)">Izmeni</button></td>
+
+<td ng-if="isZoomActive('/vrstePlacanja-list')">
+				<button ng-click="genericPickUp(vrstePlacanja,'vrstePlacanja')" type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-log-out" aria-hidden="true"  ></span>
+				</button>
+			</td>
+			</tr>
+		</table>
+
+	</div>

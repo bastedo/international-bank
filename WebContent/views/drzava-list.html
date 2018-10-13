@@ -1,0 +1,33 @@
+<div class="card meetings cf">
+<h3>Drzave</h3>
+	<button type="button" class="btn btn-default"
+	ng-click="new()">Dodaj</button>
+	
+	<table
+	class="table table-striped table-bordered table-condensed table-hover">
+	<tr>
+		<th>Sifra</th>
+		<th>Naziv</th>
+		<th>Opcija</th>
+		<th ng-if="isZoomActive('/drzava-list')">Pick up</th>
+		
+	</tr>
+	<tr ng-repeat="drzava in drzave track by $index ">
+		<td>{{drzava.drzavaId}}</td>
+		<td>{{drzava.nazivDrzave}}</td>
+		<td><button type="button" class="btn btn-default"
+			ng-click="remove(drzava)">Obrisi</button><button type="button" class="btn btn-default"
+			ng-click="edit(drzava)">Izmeni</button>
+			
+			
+
+			<td ng-if="isZoomActive('/drzava-list')">
+				<button ng-click="genericPickUp(drzava,'drzava')" type="button" class="btn btn-default" aria-label="Left Align">
+				<span class="glyphicon glyphicon-log-out" aria-hidden="true"  ></span>
+				</button>
+			</td>
+
+		</tr>
+	</table>
+
+</div>

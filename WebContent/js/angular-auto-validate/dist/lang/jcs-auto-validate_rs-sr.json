@@ -1,0 +1,13 @@
+{
+    "defaultMsg": "Please add error message for {0}",
+    "email": "Email nije validan",
+    "minlength": "Minimum {0} karaktera",
+    "maxlength": "Maksimum {0} karaktera",
+    "min": "Broj mora biti veci od {0}",
+    "max": "Broj mora biti manji od {0}",
+    "required": "Obavezno polje",
+    "date": "Datum nije validan",
+    "pattern": "Podaci moraju odgovarati ovom obrascu {0}",
+    "number": "Mora biti broj",
+    "url": "URL nije validan"
+}
